@@ -66,26 +66,53 @@
  * const pessoa3 = {id: 3, nome: 'José', idade: 17}
  * maioresDeIdade([pessoa1, pessoa2, pessoa3]) // [pessoa1, pessoa2]
  */
-interface Pessoa{
-    id: number,
-    nome: string,
-    idade: number
-}
+// interface Pessoa{
+//     id: number,
+//     nome: string,
+//     idade: number
+// }
+
+// //Início do seu código
+// function maioresDeIdade(vetor:Pessoa[]) {
+//     let novoVetor:Pessoa[] = []
+//     for (let i = 0; i < vetor.length; i++) {
+//         const element = vetor[i];
+//         if (element?.idade! >= 18) {
+//             novoVetor.push(element!)
+//         }
+//     }
+//     return novoVetor
+// }
+// const pessoa1 = {id: 1, nome: 'João', idade: 20}
+// const pessoa2 = {id: 2, nome: 'Maria', idade: 18}
+// const pessoa3 = {id: 3, nome: 'José', idade: 17}
+// console.log(maioresDeIdade([pessoa1, pessoa2, pessoa3])) // [pessoa1, pessoa2]
+
+//Fim do seu código
+
+
+/**
+ * Exercício 04 - resolve equação
+ * Nome da função - resolveEquacao
+ * Crie uma função que retorne os pontos em Y a partir de um vetor dos pontos em X da equação y = x^2 + 2x + 6
+ * @param {number[]} vetor Vetor de pontos em X
+ * @returns {number[]} Retorna um array com os pontos em Y
+ * @example
+ * resolveEquacao([1, 2, 3]) // [9, 14, 21]
+ */
 
 //Início do seu código
-function maioresDeIdade(vetor:Pessoa[]) {
-    let novoVetor:Pessoa[] = []
-    for (let i = 0; i < vetor.length; i++) {
-        const element = vetor[i];
-        if (element?.idade! >= 18) {
-            novoVetor.push(element!)
-        }
-    }
-    return novoVetor
-}
-const pessoa1 = {id: 1, nome: 'João', idade: 20}
-const pessoa2 = {id: 2, nome: 'Maria', idade: 18}
-const pessoa3 = {id: 3, nome: 'José', idade: 17}
-console.log(maioresDeIdade([pessoa1, pessoa2, pessoa3])) // [pessoa1, pessoa2]
 
+    function resolveEquacao(vetor:number[]) {
+        let vetorY:number[] = [] 
+        for (let i = 0; i < vetor.length; i++) {
+            
+            const element = vetor[i];
+            let y = element! ** 2 + 2*element! +6
+            vetorY.push(y)
+        }
+        return vetorY
+    }
+
+    console.log(resolveEquacao([1, 2, 3])) // [9, 14, 21]
 //Fim do seu código
