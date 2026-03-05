@@ -13,12 +13,41 @@
 
 //Início do seu código
 
-function criaNovoVetor(vetor:number[],valor1:number, valor2:number) {
-    vetor.push(valor1, valor2)
-    return vetor
+// function criaNovoVetor(vetor:number[],valor1:number, valor2:number) {
+//     vetor.push(valor1, valor2)
+//     return vetor
 
+// }
+
+
+// console.log(criaNovoVetor([1, 2, 3], 4, 5))
+//Fim do seu código
+
+/**
+ * Exercício 02 - divisivelPor11
+ * Nome da função - divisivelPor11
+ * Crie uma função que retorna um array com os números divisíveis por 11 no intervalo
+ * @param {number} min Número mínimo
+ * @param {number} max Número máximo
+ * @returns {number[]} Retorna um array com os números divisíveis por 11 no intervalo
+ * @example
+ *  divisivelPor11(1, 100) // [11, 22, 33, 44, 55, 66, 77, 88, 99]
+ *  
+ * divisivelPor11(11, 110) // [11, 22, 33, 44, 55, 66, 77, 88, 99, 110]
+ */
+
+//Início do seu código
+
+function divisivelPor11(min:number, max:number) {
+    let divisiveis11:number[] = []
+    for (let i = 11; i < max; i++) {
+        const elementos = i
+        if (elementos % 11 == 0) {
+            divisiveis11.push(elementos)
+        }
+    }
+    return divisiveis11
 }
 
-
-console.log(criaNovoVetor([1, 2, 3], 4, 5))
+console.log(divisivelPor11(1, 100))
 //Fim do seu código
