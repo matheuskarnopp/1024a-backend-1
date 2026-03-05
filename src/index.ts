@@ -38,16 +38,54 @@
 
 //Início do seu código
 
-function divisivelPor11(min:number, max:number) {
-    let divisiveis11:number[] = []
-    for (let i = 11; i < max; i++) {
-        const elementos = i
-        if (elementos % 11 == 0) {
-            divisiveis11.push(elementos)
-        }
-    }
-    return divisiveis11
+// function divisivelPor11(min:number, max:number) {
+//     let divisiveis11:number[] = []
+//     for (let i = 11; i < max; i++) {
+//         const elementos = i
+//         if (elementos % 11 == 0) {
+//             divisiveis11.push(elementos)
+//         }
+//     }
+//     return divisiveis11
+// }
+
+// console.log(divisivelPor11(1, 100))
+//Fim do seu código
+
+
+/**
+ *  Exercício 03 - maioresDeIdade
+ * Nome da função - maioresDeIdade
+ * Crie uma função que retorna um array com os objetos com idade maior que 18
+ * @param {vetor:Pessoa[]} vetor Vetor de objetos com id, nome e idade
+ * @returns {Pessoa[]} Retorna um array com os objetos com idade maior que 18
+ * @example
+ * 
+ * const pessoa1 = {id: 1, nome: 'João', idade: 20}
+ * const pessoa2 = {id: 2, nome: 'Maria', idade: 18}
+ * const pessoa3 = {id: 3, nome: 'José', idade: 17}
+ * maioresDeIdade([pessoa1, pessoa2, pessoa3]) // [pessoa1, pessoa2]
+ */
+interface Pessoa{
+    id: number,
+    nome: string,
+    idade: number
 }
 
-console.log(divisivelPor11(1, 100))
+//Início do seu código
+function maioresDeIdade(vetor:Pessoa[]) {
+    let novoVetor:Pessoa[] = []
+    for (let i = 0; i < vetor.length; i++) {
+        const element = vetor[i];
+        if (element?.idade! >= 18) {
+            novoVetor.push(element!)
+        }
+    }
+    return novoVetor
+}
+const pessoa1 = {id: 1, nome: 'João', idade: 20}
+const pessoa2 = {id: 2, nome: 'Maria', idade: 18}
+const pessoa3 = {id: 3, nome: 'José', idade: 17}
+console.log(maioresDeIdade([pessoa1, pessoa2, pessoa3])) // [pessoa1, pessoa2]
+
 //Fim do seu código
