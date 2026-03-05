@@ -1,123 +1,24 @@
-// let numero:number = 10
-// let palavra:string = "Algum texto"
-// let bol:boolean = true
+/**
+ * Exercício 01 - cria um novo vetor com os valores do vetor original mais dois novos valores
+ * Nome da função - criaNovoVetor
+ * Crie uma função que retorne um novo vetor com os valores do vetor original mais dois novos valores
+ * @param {number[]} vetor Vetor de números
+ * @param {number} valor1 Primeiro valor a ser adicionado
+ * @param {number} valor2 Segundo valor a ser adicionado
+ * @returns {number[]} Retorna um novo vetor com os valores do vetor original mais dois novos valores
+ * @example
+ * criaNovoVetor([1, 2, 3], 4, 5) // [1, 2, 3, 4, 5]
+ * criaNovoVetor([1, 2, 3], 0, 0) // [1, 2, 3, 0, 0]
+ */ 
 
-// let x:number | string = 10
-// x = "guilherme"
+//Início do seu código
 
-// const vetor: number[] = [1,2,3,4,5]
-// vetor[2] = 10
-// vetor.push(6)
-// const vetorString: string[] = ["a","b","ab"]
+function criaNovoVetor(vetor:number[],valor1:number, valor2:number) {
+    vetor.push(valor1, valor2)
+    return vetor
 
-
-// type Pessoa = {
-//     id?:number;
-//     nome:string;
-//     idade:number}
-
-// const pessoa:Pessoa = {
-//     id:1,
-//     nome:"Guilherme",
-//     idade:18,
-// }
-// const pessoa2:Pessoa = {
-//     id:1,
-//     nome:"Guilherme",
-//     idade:18,
-// }
-// pessoa.nome = "Terezinho"
-
-
-// const cloundVoador:any = [] 
-
-// const potatoVoadora:undefined = undefined
-
-
-// console.log(vetor, vetorString, pessoa)
-
-// vetor = [5,6,7,8,9]
-
-// function tereLindo(nome:string): void{
-//     console.log(`${nome} Lindo :3`)
-// }
-// const func = tereLindo]
-// func("Tere")
-
-// const func = function tereLindo(nome:string): void{
-//     console.log(`${nome} Lindo :3`)
-// }
-// func("Tere")
-
-
-// const func = (nome: string): void => {
-//   console.log(`${nome}`)
-// };
-
-// const func = (nome:string):string => `${nome} Lindo :3`
-// func("Tere")
-
-// function somaVetor(v:number[]):number{
-//     let soma = 0
-//     for (let i = 0; i < v.length; i++) {
-//         soma = soma + v[i]!;
-//     }
-//     return soma
-// }
-
-// function somaVetor2(v:number[]):number {
-//     const soma = v.reduce((prev,curr) => prev+curr,0)
-//     return soma
-// }
-
-// const result = somaVetor([1,2,3])
-// console.log(result)
-
-
-// function somaPares(v:number[]):number{
-//     let soma = 0
-//     for (let i = 0; i < v.length; i++) {
-//         if (v[i]! % 2 == 0) {
-//          soma = soma + v[i]!
-//         }
-//     }
-//     return soma
-// }
-
-// const resultados = somaPares([2,4,5,6,8,9])
-
-// console.log(`A soma dos pares dá ${resultados}`)
-
-
-function mergeVetor(v1:number[], v2:number[]): number[] {
-    const v3 = v1.concat(v2)
-    return v3 
 }
 
-const results = mergeVetor([456], [789])
 
-console.log(results)
-
-
-
-
-
-
-
-
-
-
-
-// import express from "express";
-
-// let app = express()
-// app.use(express.json())
-
-// app.get("/", (req,res) =>{
-//     res.send("Olá mundo")
-//     // return res.json({message: "Servidor Node + TS rodando com sucesso!"})
-// })
-
-// app.listen(3000, ()=>{
-//     console.log("🚀 Servidor online em http://localhost:3000")
-// })
+console.log(criaNovoVetor([1, 2, 3], 4, 5))
+//Fim do seu código
