@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev":"tsx src/index",
+    "lista":"tsx src/lista.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

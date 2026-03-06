@@ -40,7 +40,7 @@
 
 // function divisivelPor11(min:number, max:number) {
 //     let divisiveis11:number[] = []
-//     for (let i = 11; i < max; i++) {
+//     for (let i = min; i < max; i++) {
 //         const elementos = i
 //         if (elementos % 11 == 0) {
 //             divisiveis11.push(elementos)
@@ -101,18 +101,18 @@
  * resolveEquacao([1, 2, 3]) // [9, 14, 21]
  */
 
-//Início do seu código
+// //Início do seu código
 
-    function resolveEquacao(vetor:number[]) {
-        let vetorY:number[] = [] 
-        for (let i = 0; i < vetor.length; i++) {
+//     function resolveEquacao(vetor:number[]) {
+//         let vetorY:number[] = [] 
+//         for (let i = 0; i < vetor.length; i++) {
             
-            const element = vetor[i];
-            let y = element! ** 2 + 2*element! +6
-            vetorY.push(y)
-        }
-        return vetorY
-    }
+//             const element = vetor[i];
+//             let y = element! ** 2 + 2*element! +6
+//             vetorY.push(y)
+//         }
+//         return vetorY
+//     }
 
-    console.log(resolveEquacao([1, 2, 3])) // [9, 14, 21]
-//Fim do seu código
+//     console.log(resolveEquacao([1, 2, 3])) // [9, 14, 21]
+// //Fim do seu código
