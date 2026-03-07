@@ -168,9 +168,29 @@
  * calcularMaior(5, 1) // 5
  */
 
-//Início do seu código
-const calcularMaior = (a:number, b:number):number => a < b ? b : a
+// //Início do seu código
+// const calcularMaior = (a:number, b:number):number => a < b ? b : a
 
-console.log(calcularMaior(2, 3))  // 3
-console.log(calcularMaior(2, 3))  // 3
+// console.log(calcularMaior(2, 3))  // 3
+// console.log(calcularMaior(2, 3))  // 3
+//Fim do seu código
+
+
+/**
+ * Exercício 08 - Concatenar duas strings
+ * Nome da função - concatenarStrings
+ * Crie uma função que receba duas strings e as retorne unidas em uma única string.
+ * @param {string} s1 Primeira string
+ * @param {string} s2 Segunda string
+ * @returns {string} Retorna as duas strings concatenadas
+ * @example
+ * concatenarStrings('Olá, ', 'mundo!') // 'Olá, mundo!'
+ * concatenarStrings('123', '456') // '123456'
+ */
+
+//Início do seu código
+
+// const concatenarStrings = (s1:string, s2:string):string => s1.concat("", s2)
+// console.log(concatenarStrings('Olá, ', 'mundo!'))
+
 //Fim do seu código
