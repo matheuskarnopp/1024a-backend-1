@@ -118,13 +118,14 @@
 //     return res;
 // }
 // console.log(fact(5));
-const calcularFatorial = (num:number):number => {
-    let factorial = num
-    for (let i = num;  0 < i ; i--) {
-        i*num
-    }
-    return num
-}
-console.log(calcularFatorial(5))            
+
+// const calcularFatorial = (num:number):number => {
+//     let factorial = 1
+//     for (let i = 1;  i <= num ; i++) {
+//         factorial*=i
+//     }
+//     return factorial
+// }
+// console.log(calcularFatorial(5))            
 
 //Fim do seu código
