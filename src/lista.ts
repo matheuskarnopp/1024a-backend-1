@@ -156,4 +156,21 @@
 // console.log(encontrarMenorNumero([3, 1, 5, 2, 4])) // 1
 //Fim do seu código
 
+/**
+ * Exercício 07 - Calcular o maior entre dois números
+ * Nome da função - calcularMaior
+ * Crie uma função que receba dois números e retorne o maior deles.
+ * @param {number} a Primeiro número
+ * @param {number} b Segundo número
+ * @returns {number} Retorna o maior dos dois valores
+ * @example
+ * calcularMaior(2, 3) // 3
+ * calcularMaior(5, 1) // 5
+ */
 
+//Início do seu código
+const calcularMaior = (a:number, b:number):number => a < b ? b : a
+
+console.log(calcularMaior(2, 3))  // 3
+console.log(calcularMaior(2, 3))  // 3
+//Fim do seu código
