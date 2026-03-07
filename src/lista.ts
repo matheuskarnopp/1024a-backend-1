@@ -237,10 +237,16 @@
 
 // Início do seu código
 
-function contaVogais(str:string):number {
+function contaVogais(str:string):number | string {
+    let vetorStr:string[] = str.split("")
     let contadorVogais = 0
-    for (let i = 0; i < str.length; i++) {
-        
+    for (let i = 0; i < vetorStr.length; i++) {
+        const element = vetorStr[i];
+        element == "a" ? contadorVogais += 1 : 
+        element == "e" ? contadorVogais += 1 :
+        element == "i" ? contadorVogais += 1 :
+        element == "o" ? contadorVogais += 1 :
+        element == "u" ? contadorVogais += 1 : contadorVogais
     }
     return contadorVogais
 }
