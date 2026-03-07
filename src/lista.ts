@@ -150,7 +150,7 @@
 
 //     //pq eu preciso dos tres pontos para isso funcionar???????????????????
 //     let menor:number = Math.min(...vetorNum)
-    
+
 //     return menor
 // }
 // console.log(encontrarMenorNumero([3, 1, 5, 2, 4])) // 1
@@ -205,7 +205,7 @@
  * @example
  * inverteString("hello") // "olleh"
  * inverteString("abcdef") // "fedcba"
- */ 
+ */
 
 // Início do seu código
 //OBS: não use as funções reverse e join
@@ -215,7 +215,7 @@
 //     let stringConcat = ""
 //     for (let i = 0; i < result.length; i++) {
 //          stringConcat += result[i];
-        
+
 //     }
 //     return stringConcat
 // }
@@ -237,7 +237,7 @@
 
 // Início do seu código
 
-// function contaVogais(str:string):number | string {
+// function contaVogais(str:string):number {
 //     let vetorStr:string[] = str.split("")
 //     let contadorVogais = 0
 //     for (let i = 0; i < vetorStr.length; i++) {
@@ -275,10 +275,40 @@
 //         if (i % 7 == 0 || i % 9 == 0) {
 //             divisiveisPor7Ou9.push(i)
 //         }
-        
+
 //     }
 
 //     return divisiveisPor7Ou9 
 // }
 // console.log(divisivelPor7Ou9(1, 50))
 //Fim do seu código
+
+
+/**
+ * Exercício 12 - Contagem de consoantes
+ * Nome da função - contaConsoantes
+ * Crie uma função que receba uma string e retorne a quantidade de consoantes presentes na string.
+ * @param {string} str A string que será analisada
+ * @returns {number} Retorna a quantidade de consoantes na string
+ * @example
+ * contaConsoantes("hello") // 3
+ * contaConsoantes("abcdef") // 4
+ */
+
+// Início do seu código
+
+function contaConsoantes(str: string): number {
+    let contadorConsoantes = 0
+    let vetorStr: string[] = str.split("")
+    for (let i = 0; i < vetorStr.length; i++) {
+        const element = vetorStr[i];
+        if (element != "a" && element != "e" && element != "i" && element != "o" && element != "u") {
+            contadorConsoantes+=1
+        }
+    }
+
+    return contadorConsoantes
+}
+console.log(contaConsoantes("hello"))
+console.log(contaConsoantes("abcdef"))
+// Fim do seu código
