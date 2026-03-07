@@ -211,16 +211,15 @@
 //OBS: não use as funções reverse e join
 
 // function inverteString(str:string):string {
-//     const result:string[] = str.split("").sort()
+//     const result:string[] = str.split("")
 //     let stringConcat = ""
-//     for (let i = 0; i < result.length; i++) {
-//          stringConcat += result[i];
-
+//     for (let i = result.length - 1 ; i >=0; i--) {
+//         stringConcat += result[i];
 //     }
 //     return stringConcat
 // }
-
 // console.log(inverteString("hello"))
+
 // Fim do seu código
 
 
@@ -297,18 +296,18 @@
 
 // Início do seu código
 
-function contaConsoantes(str: string): number {
-    let contadorConsoantes = 0
-    let vetorStr: string[] = str.split("")
-    for (let i = 0; i < vetorStr.length; i++) {
-        const element = vetorStr[i];
-        if (element != "a" && element != "e" && element != "i" && element != "o" && element != "u") {
-            contadorConsoantes+=1
-        }
-    }
+// function contaConsoantes(str: string): number {
+//     let contadorConsoantes = 0
+//     let vetorStr: string[] = str.split("")
+//     for (let i = 0; i < vetorStr.length; i++) {
+//         const element = vetorStr[i];
+//         if (element != "a" && element != "e" && element != "i" && element != "o" && element != "u") {
+//             contadorConsoantes+=1
+//         }
+//     }
 
-    return contadorConsoantes
-}
-console.log(contaConsoantes("hello"))
-console.log(contaConsoantes("abcdef"))
+//     return contadorConsoantes
+// }
+// console.log(contaConsoantes("hello"))
+// console.log(contaConsoantes("abcdef"))
 // Fim do seu código
