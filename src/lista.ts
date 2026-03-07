@@ -222,3 +222,27 @@
 
 // console.log(inverteString("hello"))
 // Fim do seu código
+
+
+/**
+ * Exercício 10 - Contagem de vogais
+ * Nome da função - contaVogais
+ * Crie uma função que receba uma string e retorne a quantidade de vogais presentes na string.
+ * @param {} str A string que será analisada
+ * @returns {number} Retorna a quantidade de vogais na string
+ * @example
+ * contaVogais("hello") // 2
+ * contaVogais("abcdef") // 2
+ */
+
+// Início do seu código
+
+function contaVogais(str:string):number {
+    let contadorVogais = 0
+    for (let i = 0; i < str.length; i++) {
+        
+    }
+    return contadorVogais
+}
+console.log(contaVogais("abcdef"))
+// Fim do seu código
