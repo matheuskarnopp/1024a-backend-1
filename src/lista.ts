@@ -237,18 +237,48 @@
 
 // Início do seu código
 
-function contaVogais(str:string):number | string {
-    let vetorStr:string[] = str.split("")
-    let contadorVogais = 0
-    for (let i = 0; i < vetorStr.length; i++) {
-        const element = vetorStr[i];
-        element == "a" ? contadorVogais += 1 : 
-        element == "e" ? contadorVogais += 1 :
-        element == "i" ? contadorVogais += 1 :
-        element == "o" ? contadorVogais += 1 :
-        element == "u" ? contadorVogais += 1 : contadorVogais
-    }
-    return contadorVogais
-}
-console.log(contaVogais("abcdef"))
+// function contaVogais(str:string):number | string {
+//     let vetorStr:string[] = str.split("")
+//     let contadorVogais = 0
+//     for (let i = 0; i < vetorStr.length; i++) {
+//         const element = vetorStr[i];
+//         element == "a" ? contadorVogais += 1 : 
+//         element == "e" ? contadorVogais += 1 :
+//         element == "i" ? contadorVogais += 1 :
+//         element == "o" ? contadorVogais += 1 :
+//         element == "u" ? contadorVogais += 1 : contadorVogais
+//     }
+//     return contadorVogais
+// }
+// console.log(contaVogais("abcdef"))
+
 // Fim do seu código
+
+
+/**
+ * Exercício 11 - divisivelPor7Ou9
+ * Nome da função - divisivelPor7Ou9
+ * Crie uma função que retorna um array com os números divisíveis por 7 ou por 9 no intervalo
+ * @param {number} min Número mínimo
+ * @param {number} max Número máximo
+ * @returns {number[]} Retorna um array com os números divisíveis por 7 ou por 9 no intervalo
+ * @example
+ * divisivelPor7Ou9(1, 50) // [7, 9, 14, 18, 21, 27, 28, 35, 36, 42, 45, 49]
+ * divisivelPor7Ou9(7, 70) // [7, 9, 14, 18, 21, 27, 28, 35, 36, 42, 45, 49, 54, 56, 63, 70]
+ */
+
+//Início do seu código
+
+// const divisivelPor7Ou9 = (min:number, max:number):number[] => { 
+//     let divisiveisPor7Ou9:number[] = []
+//     for (let i = min; i < max; i++) {
+//         if (i % 7 == 0 || i % 9 == 0) {
+//             divisiveisPor7Ou9.push(i)
+//         }
+        
+//     }
+
+//     return divisiveisPor7Ou9 
+// }
+// console.log(divisivelPor7Ou9(1, 50))
+//Fim do seu código
