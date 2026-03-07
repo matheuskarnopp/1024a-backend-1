@@ -194,3 +194,31 @@
 // console.log(concatenarStrings('Olá, ', 'mundo!'))
 
 //Fim do seu código
+
+
+/**
+ * Exercício 09 - Inverte a ordem dos caracteres de uma string
+ * Nome da função - inverteString
+ * Crie uma função que receba uma string e retorne essa string com os caracteres em ordem inversa.
+ * @param {string} str A string que será invertida
+ * @returns {string} Retorna a string com os caracteres em ordem inversa
+ * @example
+ * inverteString("hello") // "olleh"
+ * inverteString("abcdef") // "fedcba"
+ */ 
+
+// Início do seu código
+//OBS: não use as funções reverse e join
+
+// function inverteString(str:string):string {
+//     const result:string[] = str.split("").sort()
+//     let stringConcat = ""
+//     for (let i = 0; i < result.length; i++) {
+//          stringConcat += result[i];
+        
+//     }
+//     return stringConcat
+// }
+
+// console.log(inverteString("hello"))
+// Fim do seu código
