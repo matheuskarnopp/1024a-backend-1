@@ -129,3 +129,31 @@
 // console.log(calcularFatorial(5))            
 
 //Fim do seu código
+
+
+
+/**
+ * Exercício 06 - Encontrar o menor número em um array
+ * Nome da função - encontrarMenorNumero
+ * Crie uma função que percorra um array de números e retorne o menor valor encontrado.
+ * @param {number[]} vetor Array de números
+ * @returns {number} Retorna o menor número presente no array
+ * @example
+ * encontrarMenorNumero([3, 1, 5, 2, 4]) // 1
+ * encontrarMenorNumero([-3, -1, -5]) // -5
+ */
+
+//Início do seu código
+
+// function encontrarMenorNumero(vetor: number[]): number {
+//     const vetorNum = vetor
+
+//     //pq eu preciso dos tres pontos para isso funcionar???????????????????
+//     let menor:number = Math.min(...vetorNum)
+    
+//     return menor
+// }
+// console.log(encontrarMenorNumero([3, 1, 5, 2, 4])) // 1
+//Fim do seu código
+
+
