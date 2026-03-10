@@ -15,14 +15,15 @@
 
 //Início do seu código
 
-// function criaNovoVetor(vetor:number[],valor1:number, valor2:number) {
-//     vetor.push(valor1, valor2)
-//     return vetor
+function criaNovoVetor(vetor:number[],valor1:number, valor2:number) {
+    
+    vetor.push(valor1, valor2)
+    return vetor
 
-// }
+}
 
 
-// console.log(criaNovoVetor([1, 2, 3], 4, 5))
+console.log(criaNovoVetor([1, 2, 3], 4, 5))
 //Fim do seu código
 
 /**
@@ -267,15 +268,16 @@
 
 //Início do seu código
 
-// function encontrarMenorNumero(vetor: number[]): number {
-//     const vetorNum = vetor
+function encontrarMenorNumero(vetor: number[]): number {
+    const vetorNum = vetor
 
-//     //pq eu preciso dos tres pontos para isso funcionar???????????????????
-//     let menor:number = Math.min(...vetorNum)
+    //pq eu preciso dos tres pontos para isso funcionar???????????????????
+    // os tres pontos desconstroem o vetor para o min poder verificar qual o menor
+    let menor:number = Math.min(...vetorNum)
 
-//     return menor
-// }
-// console.log(encontrarMenorNumero([3, 1, 5, 2, 4])) // 1
+    return menor
+}
+console.log(encontrarMenorNumero([3, 1, 5, 2, 4])) // 1
 //Fim do seu código
 
 /**
