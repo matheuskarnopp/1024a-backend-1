@@ -6,9 +6,9 @@
   "main": "index.js",
   "scripts": {
     "dev":"tsx src/index",
-    "lista":"tsx src/lista.ts",
-    "exer_rev":"tsx src/exercicios_revisão.ts",
-    "lista_p":"tsx src/lista_promise.ts",
+    "lista":"tsx src/atividades/lista.ts",
+    "exer_rev":"tsx src/atividades/exercicios_revisão.ts",
+    "lista_p":"tsx src/atividades/lista_promise.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

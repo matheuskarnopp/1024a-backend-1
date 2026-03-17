@@ -1,9 +1,23 @@
-const x = [1,2,3,4]
-const y = [5,6,7,8]
-const z = [...x, 4.5]
-console.log(z)
-const xy = [...x, ...y]
-console.log(xy)
+// Get the client
+import mysql from 'mysql2/promise';
 
-const max = Math.max(...x)
-console.log(max)
+// Create the connection to database
+const connection = await mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  database: 'luademel',
+});
+
+// Using placeholders
+try {
+  const queryPrepare = await connection.prepare(
+    'SELECT * FROM `pessoa`',
+  );
+  const results = await queryPrepare.execute([])
+  console.log(results);
+} catch (err) {
+  console.log(err);
+}
+
+// Close the connection
+await connection.end();
