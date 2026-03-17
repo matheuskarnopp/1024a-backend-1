@@ -15,15 +15,20 @@
 
 //Início do seu código
 
-function criaNovoVetor(vetor:number[],valor1:number, valor2:number) {
-    
-    vetor.push(valor1, valor2)
-    return vetor
+// function criaNovoVetor(vetor:number[],valor1:number, valor2:number) {
+//     let novoVetor:number[] = []
+//     for (let i = 0; i < vetor.length; i++) {
 
-}
+//         novoVetor.push(vetor[i]!);
+        
+//     }
+//     novoVetor.push(valor1, valor2)
+//     return novoVetor
+
+// }
 
 
-console.log(criaNovoVetor([1, 2, 3], 4, 5))
+// console.log(criaNovoVetor([1, 2, 3], 4, 5))
 //Fim do seu código
 
 /**
@@ -106,18 +111,18 @@ console.log(criaNovoVetor([1, 2, 3], 4, 5))
 
 // //Início do seu código
 
-//     function resolveEquacao(vetor:number[]) {
-//         let vetorY:number[] = [] 
-//         for (let i = 0; i < vetor.length; i++) {
+    // function resolveEquacao(vetor:number[]) {
+    //     let vetorY:number[] = [] 
+    //     for (let i = 0; i < vetor.length; i++) {
             
-//             const element = vetor[i];
-//             let y = element! ** 2 + 2*element! +6
-//             vetorY.push(y)
-//         }
-//         return vetorY
-//     }
+    //         const element = vetor[i];
+    //         let y = element! ** 2 + 2*element! +6
+    //         vetorY.push(y)
+    //     }
+    //     return vetorY
+    // }
 
-//     console.log(resolveEquacao([1, 2, 3])) // [9, 14, 21]
+    // console.log(resolveEquacao([1, 2, 3])) // [9, 14, 21]
 // //Fim do seu código
 
 
