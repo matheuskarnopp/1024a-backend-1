@@ -28,6 +28,11 @@ try {
     console.log(element?.id,element?.nome)
   }
 } catch (err) {
+  if (err instanceof Error) {
+    if (err.) {
+      
+    }
+  }
   console.log(err);
 }
 
