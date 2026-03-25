@@ -1,11 +1,13 @@
-// Get the client
-import mysql, { type RowDataPacket, type Connection  } from 'mysql2/promise';
 import express from 'express';
-
-
+import rotas from "./routes.js";
 const app = express()
-// app.use(express.json())
-//como criar uma rota no express?
+
+// Fala para a aplicação qual arquivo ela deve usar para rotas
+app.use(rotas)
+
+// Fala para a aplicação que para as rotas do usuarios, deverá haver o prefixo '/usuarios' para depois haver 
+// as outras rotas. Por exemplo, 'Login', será "/usuarios/login"
+// app.use("/usuarios", rotasUsuarios)
 
 
 app.listen(8000, ()=>{
