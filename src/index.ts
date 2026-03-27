@@ -13,5 +13,3 @@ app.use(rotas)
 app.listen(8000, ()=>{
   console.log("Iniciando o servidor na porta 8000")
 })
-
-
