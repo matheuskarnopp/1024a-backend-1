@@ -16,7 +16,7 @@ interface IPessoa extends RowDataPacket {
 
 ////////////
 
-const connection = mysql.createPool({
+const connection = mysql.createPool({ 
   host: "localhost",
   user: "root",
   database: "luademel",
@@ -33,6 +33,9 @@ routes.get("/pessoas", async (req, res) => {
     console.log(err);
   }
 });
+
+
+
 
 routes.post("/pessoas", async (req, res) => {
   let { id, nome } = req.body;

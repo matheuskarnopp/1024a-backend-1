@@ -9,8 +9,8 @@ app.use(express.json())
 // as outras rotas. Por exemplo, 'Login', será "/usuarios/login"
 // app.use("/usuarios", rotasUsuarios)
 
-
+let PORT = 8000
 app.use(rotas)
 app.listen(8000, ()=>{
-  console.log("Iniciando o servidor na porta 8000")
+  console.log(`Iniciando o servidor na porta 8000. http://localhost:${PORT}`)
 })
