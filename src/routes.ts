@@ -17,11 +17,11 @@ interface IPessoa extends RowDataPacket {
 
 interface IProduto extends RowDataPacket{
   id:number,
-  nome:"string",
-  categoria:"string",
+  nome:string,
+  categoria:string,
   preco:number,
   data_criacao:Date,
-  data_moodificacao:Date 
+  data_modificacao:Date 
 }
 
 ////////////
