@@ -5,7 +5,7 @@ import mysql, {
   type Connection,
   type ResultSetHeader,
 } from "mysql2/promise";
-import veirificaErroDB from "./service.js";
+import verificaErroDB from "./service.js";
 
 const routes = Router();
 
@@ -27,7 +27,7 @@ interface IProduto extends RowDataPacket{
 ////////////
 
 const connection = mysql.createPool({
-  host: "localhost",
+  host: "aaaaaaaaa",
   user: "root",
   database: "luademel",
 });
@@ -39,7 +39,7 @@ routes.get("/pessoas", async (req, res) => {
 
     res.status(200).json(dados);
   } catch (err) {
-    let verificar = veirificaErroDB(err)
+    let verificar = verificaErroDB(err)
     res.status(500).json(verificar)
   }
 });
@@ -62,7 +62,7 @@ routes.post("/pessoas", async (req, res) => {
 
     return res.status(201).json({ mensagem: "Sucesso ao inserir!" });
   } catch (err) {
-    let verificar = veirificaErroDB(err)
+    let verificar = verificaErroDB(err)
     res.status(500).json(verificar)
   }
 });
@@ -71,18 +71,18 @@ routes.post("/pessoas", async (req, res) => {
 // Crie uma rota chamada `cadastro_produto` que eu possa enviar
 // um JSON para cadastrar um novo produto no banco de dados
 routes.post("/cadastro_produto", async(req,res)=>{
-  const {id, nome, categoria, preco, data_criacao, data_moodificacao} = req.body
+  const {id, nome, categoria, preco, data_criacao, data_modificacao} = req.body
   try {
     const [result] = await connection.execute<ResultSetHeader>(
       "INSERT INTO produto VALUES (?,?,?,?,?,?)",
-      [id, nome, categoria, preco, data_criacao, data_moodificacao],
+      [id, nome, categoria, preco, data_criacao, data_modificacao],
     );
     if (result.affectedRows === 0) {
       res.status(500).json({mensagem:"Erro ao inserir o produto"})
     }
     res.status(201).json({mensagem:"Sucesso ao inserir o produto"})
   } catch (err) {
-   let verificar = veirificaErroDB(err)
+   let verificar = verificaErroDB(err)
     res.status(500).json(verificar)
   }
 })
@@ -94,7 +94,7 @@ routes.get("/listar_produtos", async(req,res)=>{
   )
   res.status(200).json({dados})
   } catch (err) {
-    let verificar = veirificaErroDB(err)
+    let verificar = verificaErroDB(err)
     res.status(500).json(verificar)
   }
   
@@ -106,11 +106,11 @@ routes.get("/listar_produtos", async(req,res)=>{
 routes.get("/listar_produtos_informatica", async(req,res)=>{
   try {
     const [dados, campos] = await connection.execute<IProduto[]>(
-      "SELECT * FROM produto WHERE categoria = informatica"
+      "SELECT * FROM produto WHERE categoria = 'informatica'"
     )
     res.status(200).json(dados)
   } catch (err) {
-  let verificar = veirificaErroDB(err)
+  let verificar = verificaErroDB(err)
     res.status(500).json(verificar)
   }
 })
@@ -123,8 +123,9 @@ routes.get("/listar_produtos_caros", async(req,res)=>{
     const [dados, campos] = await connection.execute<IProduto[]>(
       "SELECT * FROM produto WHERE preco > 100"
     )
+    res.status(200).json(dados)
   } catch (err) {
-   let verificar = veirificaErroDB(err)
+   let verificar = verificaErroDB(err)
     res.status(500).json(verificar)
   }
 })
