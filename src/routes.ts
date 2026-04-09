@@ -5,8 +5,8 @@ import mysql, {
   type Connection,
   type ResultSetHeader,
 } from "mysql2/promise";
-import verificaErroDB from "./service.js";
-
+import MysqlErrorHandle from "./service.js";
+import connection from "./mysql_connectio.js";
 const routes = Router();
 
 ////////////
@@ -26,11 +26,7 @@ interface IProduto extends RowDataPacket{
 
 ////////////
 
-const connection = mysql.createPool({
-  host: "aaaaaaaaa",
-  user: "root",
-  database: "luademel",
-});
+
 routes.get("/pessoas", async (req, res) => {
   try {
     const [dados, campos] = await connection.execute<IPessoa[]>(
@@ -39,8 +35,8 @@ routes.get("/pessoas", async (req, res) => {
 
     res.status(200).json(dados);
   } catch (err) {
-    let verificar = verificaErroDB(err)
-    res.status(500).json(verificar)
+    const mysqlErrorHandle = new MysqlErrorHandle(err,res)
+    mysqlErrorHandle.verificaErroDB()
   }
 });
 
@@ -62,8 +58,8 @@ routes.post("/pessoas", async (req, res) => {
 
     return res.status(201).json({ mensagem: "Sucesso ao inserir!" });
   } catch (err) {
-    let verificar = verificaErroDB(err)
-    res.status(500).json(verificar)
+    const mysqlErrorHandle = new MysqlErrorHandle(err,res)
+    mysqlErrorHandle.verificaErroDB()
   }
 });
 
@@ -82,8 +78,8 @@ routes.post("/cadastro_produto", async(req,res)=>{
     }
     res.status(201).json({mensagem:"Sucesso ao inserir o produto"})
   } catch (err) {
-   let verificar = verificaErroDB(err)
-    res.status(500).json(verificar)
+    const mysqlErrorHandle = new MysqlErrorHandle(err,res)
+    mysqlErrorHandle.verificaErroDB()
   }
 })
 
@@ -94,8 +90,8 @@ routes.get("/listar_produtos", async(req,res)=>{
   )
   res.status(200).json({dados})
   } catch (err) {
-    let verificar = verificaErroDB(err)
-    res.status(500).json(verificar)
+    const mysqlErrorHandle = new MysqlErrorHandle(err,res)
+    mysqlErrorHandle.verificaErroDB()
   }
   
 })
@@ -110,8 +106,8 @@ routes.get("/listar_produtos_informatica", async(req,res)=>{
     )
     res.status(200).json(dados)
   } catch (err) {
-  let verificar = verificaErroDB(err)
-    res.status(500).json(verificar)
+    const mysqlErrorHandle = new MysqlErrorHandle(err,res)
+    mysqlErrorHandle.verificaErroDB()
   }
 })
 
@@ -125,8 +121,8 @@ routes.get("/listar_produtos_caros", async(req,res)=>{
     )
     res.status(200).json(dados)
   } catch (err) {
-   let verificar = verificaErroDB(err)
-    res.status(500).json(verificar)
+    const mysqlErrorHandle = new MysqlErrorHandle(err,res)
+    mysqlErrorHandle.verificaErroDB()
   }
 })
 
