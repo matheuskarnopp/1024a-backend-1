@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"tsx src/index",
+    "dev":"tsx watch src/index",
     "lista":"tsx src/atividades/lista.ts",
     "exer_rev":"tsx src/atividades/exercicios_revisão.ts",
     "lista_p":"tsx src/atividades/lista_promise.ts",
