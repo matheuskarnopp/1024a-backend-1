@@ -19,7 +19,7 @@ class MysqlErrorHandle{
         } else if (this.error instanceof Error && 'code' in this.error && this.error.code === 'ER_NO_SUCH_TABLE') {
             this.res.status(500).json({ mensagem: "ERRO: Você digitou o nome da tabela errado, confira o Execute!" })
         }else if(this.error instanceof Error && 'code' in this.error && this.error.code === ('ER_DUP_ENTRY')){
-            this.res.status(500).json({ mensagem: "ERRO: Já exite um produto com esse id, troque o id" })
+            this.res.status(500).json({ mensagem: "ERRO: Já exite um id cadastrado anteriormente no banco de dados" })
         }
          else {
             this.res.status(500).json({ mensagem: "ERRO: Desconhecido!" })
