@@ -24,6 +24,11 @@ interface IProduto extends RowDataPacket{
   data_modificacao:Date 
 }
 
+interface IPedidos extends Router{
+  cliente:string,
+  quantidade:number,
+  data_pedido:Date
+}
 ////////////
 
 
@@ -131,7 +136,7 @@ routes.get("/listar_produtos_caros", async(req,res)=>{
 // o pedido. Para realizar isso, utilize o comando inner join para juntar as tabelas. 
 // Utilize o banco de dados chamado  dbteremercado
 
-//TODO: testar
+
 routes.get("/cliente_data_pedido", async(req,res) =>{
   try {
      const [dados, campos] = await connection.execute(
@@ -152,7 +157,7 @@ routes.get("/cliente_data_pedido", async(req,res) =>{
 routes.get("/pedidos_2026", async(req, res) => {
   try {
     const [dados, campos] = await connection.execute(
-      "SELECT nome,datapedido FROM clientes c INNER JOIN pedidos p ON c.idclientes=p.clientes_idclientes WHERE datapedido BETWEEN '2026-01-01' AND '2026-12-31';"
+      "SELECT idclientes, nome, cidade, idade, idpedidos, datapedido FROM clientes c INNER JOIN pedidos p ON c.idclientes=p.clientes_idclientes WHERE datapedido BETWEEN '2026-01-01' AND '2026-12-31';"
     )
     res.status(200).json({dados})
   } catch (err) {
@@ -165,9 +170,33 @@ routes.get("/pedidos_2026", async(req, res) => {
 // um json no formato '{quantidade_pedidos:100}' com a quantidade de pedidos cadastrados
 // na tabela pedidos. USE O COMANDO COUNT(*) para contar as quantidades.
 
+routes.get("/quantidade_pedidos", async(req,res)=>{
+  try {
+    const [dados,campos] = await connection.execute<>("SELECT COUNT(*) AS quantidade_pedidos FROM itenspedidos")
+    // const dadoTransformado = dados.map(dado=>{
+      
+    // })
+    res.status(200).json(dados)
+  } catch (err) {
+    
+  }
+})
+
 // 4 Crie uma rota chamada '\quantidade_pedidos_clientes' que retorne
 // um json no formato '[{nome:"tere",quantidade_pedidos:1000}]' que retorne 
 // todos os clientes e a quantidade de pedidos que cada cliente fez
+
+ routes.get("/quantidade_pedido_clientes", async(req, res) => {
+  try {
+    const [dados, campos] = await connection.execute(
+      "SELECT idclientes, idpedidos FROM clientes c INNER JOIN  ",
+    )
+    res.status(200).json({dados})
+  } catch (err) {
+    const mysqlErrorHandle = new MysqlErrorHandle(err, res)
+    mysqlErrorHandle.verificaErroDB()
+  }
+})
 
 
 export default routes;
