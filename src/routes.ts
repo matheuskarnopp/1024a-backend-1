@@ -131,10 +131,20 @@ routes.get("/listar_produtos_caros", async(req,res)=>{
 // o pedido. Para realizar isso, utilize o comando inner join para juntar as tabelas. 
 // Utilize o banco de dados chamado  dbteremercado
 
-
-// SELECT nome,datapedido FROM clientes c 
-// INNER JOIN pedidos p ON c.idclientes=p.clientes_idclientes
-
+//TODO: testar
+routes.get("/cliente_data_pedido", async(req,res) =>{
+  try {
+     const [dados, campos] = await connection.execute(
+      "SELECT nome,datapedido FROM clientes c INNER JOIN pedidos p ON c.idclientes=p.clientes_idclientes"
+    )
+    res.status(200).json({dados})
+  } catch (err) {
+    const mysqlErrorHandle = new MysqlErrorHandle(err, res)
+    mysqlErrorHandle.verificaErroDB()
+  }
+})
+//  "SELECT nome,datapedido FROM clientes c ",
+//  "INNER JOIN pedidos p ON c.idclientes=p.clientes_idclientes"
 // 2 Crie uma rota chamada '\pedidos_2026' que retorne 
 // idclientes, nome, cidade, idade,idpedidos,datapedido dos pedidos feitos no ano
 // de 2026.
