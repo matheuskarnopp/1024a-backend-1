@@ -149,6 +149,18 @@ routes.get("/cliente_data_pedido", async(req,res) =>{
 // idclientes, nome, cidade, idade,idpedidos,datapedido dos pedidos feitos no ano
 // de 2026.
 
+routes.get("/pedidos_2026", async(req, res) => {
+  try {
+    const [dados, campos] = await connection.execute(
+      "SELECT nome,datapedido FROM clientes c INNER JOIN pedidos p ON c.idclientes=p.clientes_idclientes WHERE datapedido BETWEEN '2026-01-01' AND '2026-12-31';"
+    )
+    res.status(200).json({dados})
+  } catch (err) {
+    const mysqlErrorHandle = new MysqlErrorHandle(err, res)
+    mysqlErrorHandle.verificaErroDB()
+  }
+})
+
 // 3.Crie uma rota chamada '\quantidade_pedidos' que retorne 
 // um json no formato '{quantidade_pedidos:100}' com a quantidade de pedidos cadastrados
 // na tabela pedidos. USE O COMANDO COUNT(*) para contar as quantidades.
