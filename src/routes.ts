@@ -24,7 +24,7 @@ interface IProduto extends RowDataPacket{
   data_modificacao:Date 
 }
 
-interface IPedidos extends Router{
+interface IPedidos extends RowDataPacket{
   cliente:string,
   quantidade:number,
   data_pedido:Date
