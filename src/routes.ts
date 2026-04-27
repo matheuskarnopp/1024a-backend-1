@@ -172,13 +172,11 @@ routes.get("/pedidos_2026", async(req, res) => {
 
 routes.get("/quantidade_pedidos", async(req,res)=>{
   try {
-    const [dados,campos] = await connection.execute<>("SELECT COUNT(*) AS quantidade_pedidos FROM itenspedidos")
-    // const dadoTransformado = dados.map(dado=>{
-      
-    // })
-    res.status(200).json(dados)
+    const [dados,campos] = await connection.execute<IPedidos[]>("SELECT COUNT(*) AS quantidade_pedidos FROM itenspedidos") 
+    res.status(200).json(...dados)
   } catch (err) {
-    
+    const mysqlErrorHandle = new MysqlErrorHandle(err,res)
+    mysqlErrorHandle.verificaErroDB()
   }
 })
 
